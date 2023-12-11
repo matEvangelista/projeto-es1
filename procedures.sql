@@ -40,8 +40,8 @@ CREATE PROCEDURE InsertUsuario(
     IN p_telefone VARCHAR(11)
 )
 BEGIN
-    INSERT INTO usuario (matricula, nome, email, telefone)
-    VALUES (p_matricula, p_nome, p_email, p_telefone);
+    INSERT INTO usuario (matricula, nome, email, telefone, senha, role)
+    VALUES (p_matricula, p_nome, p_email, p_telefone, '123456', 'discente');
 END
 
 //

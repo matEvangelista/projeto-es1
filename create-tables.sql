@@ -4,6 +4,7 @@ CREATE TABLE usuario (
                          nome VARCHAR(255) NOT NULL,
                          email VARCHAR(255) NOT NULL,
                          telefone VARCHAR(11) NOT NULL,
+                         tipo VARCHAR(255) NOT NULL,
                          senha VARCHAR(255) NOT NULL,
                          createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                          updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -92,10 +93,7 @@ CREATE TABLE reserva_recorrente (
                                     data_fim DATE NOT NULL,
                                     docente_siape VARCHAR(255) NOT NULL,
                                     docente_matricula VARCHAR(255) NOT NULL,
-                                    FOREIGN KEY (matricula_diretor) REFERENCES diretor (matricula_diretor),
-                                    FOREIGN KEY (sala_id) REFERENCES sala (id),
-                                    FOREIGN KEY (docente_siape, docente_matricula) REFERENCES docente (siape, matricula_docente),
-                                    FOREIGN KEY (id) REFERENCES reserva (id),
+                                    FOREIGN KEY (matricula_diretor) REFERENCES usuario (matricula),
                                     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

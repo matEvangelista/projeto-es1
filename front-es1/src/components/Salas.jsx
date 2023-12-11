@@ -53,6 +53,7 @@ export default function ListaSalas() {
                         <th className="text-center">Localização</th>
                         <th className="text-center">Disponivel</th>
                         <th className="text-center p-3">Descrição</th>
+                        <th className="text-center p-3">Reservas</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -64,6 +65,9 @@ export default function ListaSalas() {
                             <td className="text-center p-3">{sala.localizacao}</td>
                             <td className="text-center p-3">{sala.disponivel ? 'Sim' : 'Não'}</td>
                             <td className="text-center p-3">{sala.descricao}</td>
+                            <td className="text-center p-3">
+                                <Link to={`/reservas/automatica/espaco/${sala.id}`}>Ver Reservas</Link>
+                            </td>
                             <td>
                                 <Link to={`/salas/${sala.id}`} style={{marginRight: '5px'}}
                                       className="btn btn-primary">Editar</Link>

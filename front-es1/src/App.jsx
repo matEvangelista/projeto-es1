@@ -11,6 +11,7 @@ import GestaoReservas from './components/GestaoReservas';
 import ListaUsuarios from "./components/Usuarios.jsx";
 import ListaSalas from "./components/Salas.jsx";
 import EditarSala from "./components/EditarSala.jsx";
+import ReservasPorSala from "./components/ReservasPorSala.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='usuarios' element={<ListaUsuarios />} />
         <Route path='salas' element={<ListaSalas />} />
         <Route path='/salas/:id' element={<EditarSala />} />
+        <Route path="/reservas/automatica/espaco/:id" element={<ReservasPorSala />} />
       </Routes>
       <Footer/>
     </div>

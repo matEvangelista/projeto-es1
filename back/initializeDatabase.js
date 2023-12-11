@@ -6,7 +6,7 @@ async function initializeDatabase() {
     const connection = await mysql.createConnection({
         host: process.env.DB_HOST || 'localhost',
         user: process.env.DB_USER || 'root',
-        password: process.env.DB_PASSWORD || 'password',
+        password: process.env.DB_PASSWORD || '1234',
         database: process.env.DB_NAME || 'dados_es1'
     });
 
@@ -25,7 +25,17 @@ async function initializeDatabase() {
             }
         }
 
-        // Execute o script insert.sql
+        //Execute o script insere.sql
+        const insereSql = fs.readFileSync('/home/operador/IdeaProjects/projeto-es1/insere.sql').toString();
+        const insereStatements = insereSql.split(';');
+
+        for (const statement of insereStatements) {
+            if (statement.trim() !== '') {
+                await connection.query(statement);
+            }
+        }
+
+        // Execute o script queries.sql
         const insertSql = fs.readFileSync('/home/operador/IdeaProjects/projeto-es1/queries.sql').toString();
         const insertStatements = insertSql.split(';');
 

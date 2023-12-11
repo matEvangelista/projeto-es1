@@ -8,7 +8,7 @@ export default function CadastroUsuario() {
         tipo: '',
         matricula: '',
         senha: '',
-        telefone: ''
+        telefone: '',
     });
 
     const handleChange = e => {
@@ -35,16 +35,16 @@ export default function CadastroUsuario() {
             <form onSubmit={ handleSubmit }>
                 <div className="inputs mt-3">
                     <div className="row mb-3">
-                        <div class="col-md-4">
-                            <label for="nome" class="form-label">Nome do usuário</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Jobson da Silva" onChange={ handleChange } />
+                        <div className="col-md-4">
+                            <label htmlFor="nome" className="form-label">Nome do usuário</label>
+                            <input type="text" className="form-control" id="nome" placeholder="Jobson da Silva" onChange={ handleChange } />
                         </div>
-                        <div class="col-md-4">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="jobson@gmail.com" onChange={ handleChange } />
+                        <div className="col-md-4">
+                            <label htmlFor="email" className="form-label">E-mail</label>
+                            <input type="email" className="form-control" id="email" placeholder="jobson@gmail.com" onChange={ handleChange } />
                         </div>
                         <div className="col-md-4 mt-3 mt-md-auto">
-                            <select class="form-select" aria-label="tipo" onChange={ handleChange }>
+                            <select className="form-select" aria-label="tipo" id="tipo" onChange={ handleChange }>
                                 <option selected>Tipo de usuário</option>
                                 <option value="discente">Discente</option>
                                 <option value="docente">Docente</option>
@@ -53,17 +53,17 @@ export default function CadastroUsuario() {
                         </div>
                     </div>
                     <div className="row">
-                        <div class="col-md-4">
-                            <label for="matricula" class="form-label">Matrícula</label>
-                            <input type="text" class="form-control" id="matricula" placeholder="2023123..." onChange={ handleChange } />
+                        <div className="col-md-4">
+                            <label htmlFor="matricula" className="form-label">Matrícula</label>
+                            <input type="text" className="form-control" id="matricula" placeholder="2023123..." onChange={ handleChange } />
                         </div>
-                        <div class="col-md-4">
-                            <label for="senha" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="senha" placeholder="Sua senha aqui" onChange={ handleChange } />
+                        <div className="col-md-4">
+                            <label htmlFor="senha" className="form-label">Senha</label>
+                            <input type="password" className="form-control" id="senha" placeholder="Sua senha aqui" onChange={ handleChange } />
                         </div>
-                        <div class="col-md-4">
-                            <label for="telefone" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" id="telefone" placeholder="2199999999" onChange={ handleChange } />
+                        <div className="col-md-4">
+                            <label htmlFor="telefone" className="form-label">Telefone</label>
+                            <input type="tel" className="form-control" id="telefone" placeholder="2199999999" onChange={ handleChange } />
                         </div>
                     </div>
                     <div className="row mt-3">

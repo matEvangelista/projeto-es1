@@ -51,8 +51,8 @@ class UserController {
                 return res.status(401).json({ mensagem: 'Credenciais inválidas' });
             }
 
-            const token = jwt.sign({ usuario: { id: usuario.id, role: usuario.role } }, process.env.SECRET_KEY);
-            res.json({ token });
+            const token = jwt.sign({ usuario: { id: usuario.id, nome: usuario.nome, tipo: usuario.tipo, matricula: usuario.matricula } }, process.env.SECRET_KEY);
+            res.json({ token, usuario });
         } catch (error) {
             console.error('Erro ao fazer login:', error);
             res.status(500).json({ mensagem: 'Erro interno do servidor' });

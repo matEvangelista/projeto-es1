@@ -1,45 +1,16 @@
-/*-- TODO: transformar em enum
-  tipos de reserva
-insert into tipo_reserva (id, descricao)
-values (1, 'automática');
-
-insert into tipo_reserva (id, descricao)
-values (2, 'sob autorização');
-
-insert into tipo_reserva (id, descricao)
-values (3, 'recorrente');*/
-
 -- insere discente
-insert into usuario (matricula, nome, email, telefone, senha) values ('202311250001', 'Mateus Alcântara', 'mateus.alcantara@gmail.com', '21999999999', '123456');
+insert into usuario (matricula, nome, email, telefone, tipo ,senha) values ('202311250001', 'Mateus Alcântara', 'mateus.alcantara@gmail.com', '21999999999', 'discente', '123456');
 INSERT INTO discente (matricula_discente) VALUES ('202311250001');
-/*INSERT INTO discente (matricula_discente)
-VALUES ((select u.matricula
-from usuario u
-order by u.matricula DESC
-LIMIT 1));*/
 
 -- insere docente
-insert into usuario (matricula, nome, email, telefone, senha) values ('202311250002', 'Jobson', 'jobson@gmail.com', '21999999999', '123456');
+insert into usuario (matricula, nome, email, telefone, tipo, senha) values ('202311250002', 'Jobson', 'jobson@gmail.com', '21999999999', 'docente', '123456');
 insert into docente (matricula_docente, siape) values ('202311250002', '202311250002');
-/*insert into docente (matricula_docente, siape)
-values ((select u.matricula
-from usuario u
-order by u.matricula DESC
-LIMIT 1), (select u.matricula
-from usuario u
-order by u.matricula DESC
-LIMIT 1));*/
 
 -- insere diretor
-insert into usuario(matricula, nome, email, telefone, senha) values ('202311250003','Andreatta', 'andreatta@gmail.com', '21999999999', '123456');
+insert into usuario(matricula, nome, email, telefone, tipo, senha) values ('202311250003','Andreatta', 'andreatta@gmail.com', '21999999999', 'diretor', '123456');
 INSERT into diretor (matricula_diretor) values ('202311250003');
-/*INSERT into diretor (matricula_diretor)
-values ((select u.matricula
-from usuario u
-order by u.matricula DESC
-LIMIT 1));*/
 
--- insere admin
+-- insere adminnome
 insert into administrador (nome) values ('Pedro');
 
 -- insere sala

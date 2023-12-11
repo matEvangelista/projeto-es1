@@ -1,6 +1,5 @@
-import data from "../assets/salas.json";
-
 import { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 
 export default function GestaoReservas() {
 
@@ -11,7 +10,7 @@ export default function GestaoReservas() {
     const [dataRecorrentes, setDataRecorrentes] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/reservas_sob_autorizacao')
+        fetch('http://localhost:3001/api/reservas/sobAutorizacao')
             .then(response => response.json())
             .then(dataASerAprovado => setDataASerAprovado(dataASerAprovado))
             .then(console.log(dataASerAprovado))
@@ -19,7 +18,7 @@ export default function GestaoReservas() {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/reservas_automaticas')
+        fetch('http://localhost:3001/api/reservas/automatica')
             .then(response => response.json())
             .then(dataAutomatica => setdataAutomatica(dataAutomatica))
             .then(console.log(dataAutomatica))
@@ -27,7 +26,7 @@ export default function GestaoReservas() {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/reservas_recorrentes')
+        fetch('http://localhost:3001/api/reservas/recorrente')
             .then(response => response.json())
             .then(dataRecorrentes => setDataRecorrentes(dataRecorrentes))
             .then(console.log(dataRecorrentes))

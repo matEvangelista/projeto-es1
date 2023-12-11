@@ -10,10 +10,11 @@ class UserRepository {
 
     //TODO: login
     async getUserByCredentials(email, senha) {
+        console.log("entrei repo ?")
         // Busca um usuário no banco de dados com o email fornecido
         const usuario = await Usuario.findOne({
             where: { email },
-            attributes: ['email', 'senha'], // Seleciona apenas os atributos 'id', 'role' e 'senha' do usuário
+            attributes: ['email', 'senha', 'matricula', 'nome', 'tipo'],
         });
 
         // Se nenhum usuário foi encontrado com o email fornecido, lança um erro
@@ -33,6 +34,7 @@ class UserRepository {
         delete usuario.dataValues.senha;
 
         // Retorna o usuário
+        console.log("usuario from db", usuario)
         return usuario;
     }
 
